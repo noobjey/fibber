@@ -1,7 +1,3 @@
-#Mine
-.git
-.DS*
-
 
 #https://github.com/github/gitignore/blob/master/Ruby.gitignore
 *.gem
@@ -49,7 +45,8 @@ build/
 *.iml
 
 ## Directory-based project format:
-.idea/
+# Commented out because its in the .gitignore_global file
+#.idea/
 # if you remove the above rule, at least ignore the following:
 
 # User-specific stuff:
