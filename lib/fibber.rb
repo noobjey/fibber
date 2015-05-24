@@ -11,6 +11,12 @@
 
 class Fibber
   def generate(quantity)
-    0
+    if quantity.is_a? String
+      return 0
+    elsif quantity < 0
+      return 0
+    else
+      return quantity
+    end
   end
 end

@@ -9,10 +9,18 @@ describe Fibber do
       expect(instance.generate(empty_quantity)).to eq(0)
     end
 
-    it 'returns zero when quantity is zero' do
+    it 'returns 0 when quantity is 0' do
       instance = Fibber.new
+      quantity = 0
 
-      expect(instance.generate(0)).to eq(0)
+      expect(instance.generate(quantity)).to eq(0)
+    end
+
+    it 'returns 1 when quantity is 1' do
+      instance = Fibber.new
+      quantity = 1
+
+      expect(instance.generate(quantity)).to eq(1)
     end
   end
 end
