@@ -29,5 +29,12 @@ describe Fibber do
 
       expect(fibber.generate(quantity)).to eq(1)
     end
+
+    it 'returns 2 when quantity is 3' do
+      fibber = Fibber.new
+      quantity = 3
+
+      expect(fibber.generate(quantity)).to eq(2)
+    end
   end
 end
