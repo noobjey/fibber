@@ -5,7 +5,7 @@ describe Fibber do
     it 'does this' do
       instance = Fibber.new
 
-      expect(instance.some_method()).to eq(true)
+      expect(instance.some_method.to eq(true))
     end
   end
 end

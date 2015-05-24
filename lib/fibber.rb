@@ -1,4 +1,5 @@
-# The sequence begins with the numbers 0 and 1. From there, each element is the sum of the previous two elements.
+# The sequence begins with the numbers 0 and 1. From there, each element is the sum of the previous
+# two elements.
 # Start with 0 and 1
 # 0 plus 1 is (1)
 # 1 plus 1 is (2)
@@ -8,10 +9,8 @@
 # 5 plus 8 is (13)
 # 8 plus 13 is (21)
 
-
-# Comment goes here
 class Fibber
-  def some_method()
+  def some_method
     true
   end
 end
