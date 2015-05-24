@@ -9,3 +9,9 @@
 # 8 plus 13 is (21)
 
 
+# Comment goes here
+class Fibber
+  def some_method()
+    true
+  end
+end

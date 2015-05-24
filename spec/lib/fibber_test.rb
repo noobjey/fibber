@@ -1,15 +1,11 @@
-require 'minitest'
-require_relative 'fibber'
+require './lib/some_class'
 
-class FibberTest < Minitest::Test
+describe Fibber do
+  describe 'some class behaviour' do
+    it 'does this' do
+      instance = Fibber.new
 
-  def test_acceptance
-    expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
-
-    result = Fibber.new(15)
-
-    assert_equals 1, 0
-    # assert_equals expected, result
+      expect(instance.some_method()).to eq(true)
+    end
   end
-
 end
