@@ -10,7 +10,7 @@
 # 8 plus 13 is (21)
 
 class Fibber
-  def some_method
-    true
+  def generate
+    0
   end
 end
