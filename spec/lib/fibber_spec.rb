@@ -3,66 +3,57 @@ require './lib/fibber'
 describe Fibber do
   describe 'fibber.generate()' do
     it 'returns zero when there is no quantity' do
-      fibber = Fibber.new
       empty_quantity = ''
 
-      expect(fibber.generate(empty_quantity)).to eq(0)
+      expect(Fibber.generate(empty_quantity)).to eq(0)
     end
 
     it 'returns 0 when quantity is 0' do
-      fibber = Fibber.new
       quantity = 0
 
-      expect(fibber.generate(quantity)).to eq(0)
+      expect(Fibber.generate(quantity)).to eq(0)
     end
 
     it 'returns 1 when quantity is 1' do
-      fibber = Fibber.new
       quantity = 1
 
-      expect(fibber.generate(quantity)).to eq(1)
+      expect(Fibber.generate(quantity)).to eq(1)
     end
 
     it 'returns 1 when quantity is 2' do
-      fibber = Fibber.new
       quantity = 2
 
-      expect(fibber.generate(quantity)).to eq(1)
+      expect(Fibber.generate(quantity)).to eq(1)
     end
 
     it 'returns 2 when quantity is 3' do
-      fibber = Fibber.new
       quantity = 3
 
-      expect(fibber.generate(quantity)).to eq(2)
+      expect(Fibber.generate(quantity)).to eq(2)
     end
 
     it 'returns 3 when quantity is 4' do
-      fibber = Fibber.new
       quantity = 4
 
-      expect(fibber.generate(quantity)).to eq(3)
+      expect(Fibber.generate(quantity)).to eq(3)
     end
 
     it 'returns 5 when quantity is 5' do
-      fibber = Fibber.new
       quantity = 5
 
-      expect(fibber.generate(quantity)).to eq(5)
+      expect(Fibber.generate(quantity)).to eq(5)
     end
 
     it 'returns 8 when quantity is 6' do
-      fibber = Fibber.new
       quantity = 6
 
-      expect(fibber.generate(quantity)).to eq(8)
+      expect(Fibber.generate(quantity)).to eq(8)
     end
 
     it 'returns 144 when quantity is 12' do
-      fibber = Fibber.new
       quantity = 12
 
-      expect(fibber.generate(quantity)).to eq(144)
+      expect(Fibber.generate(quantity)).to eq(144)
     end
   end
 end
