@@ -12,11 +12,11 @@
 class Fibber
   def generate(quantity)
     if (quantity.is_a? String) || (quantity < 1)
-      return 0
+      0
     elsif quantity < 3
-      return 1
+      1
     else
-      return quantity - 1
+      Fibber.new.generate(quantity - 1) + Fibber.new.generate(quantity - 2)
     end
   end
 end
