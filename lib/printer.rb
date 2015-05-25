@@ -18,4 +18,8 @@ class Printer
 
     output.rstrip
   end
+
+  def better_output(_values)
+    '   1'
+  end
 end
