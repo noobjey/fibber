@@ -75,12 +75,54 @@ describe 'Printer' do
       expect(result.length).to eq(expected)
     end
 
-    it 'should print five values per line' do
+    it 'should output five values per line' do
       values   = [1, 2, 33, 44, 555, 665]
       printer  = Printer.new(values)
       expected = "   1   2  33  44 555\n 665"
 
       result = printer.better_output
+
+      expect(result).to eq(expected)
+    end
+  end
+
+  describe 'printer.fancy_output' do
+    it 'should use output two characters when largest value is one character' do
+      values = [1, 2, 3]
+      printer = Printer.new(values)
+      expected = 6
+
+      result = printer.fancy_output
+
+      expect(result.length).to eq(expected)
+    end
+
+    it 'should use output three characters when largest value is two characters' do
+      values = [1, 2, 33]
+      printer = Printer.new(values)
+      expected = 9
+
+      result = printer.fancy_output
+
+      expect(result.length).to eq(expected)
+    end
+
+    it 'should use output six characters when largest value is five characters' do
+      values = [1, 2, 33, 12_345]
+      printer = Printer.new(values)
+      expected = 24
+
+      result = printer.fancy_output
+
+      expect(result.length).to eq(expected)
+    end
+
+    it 'should output five values per line' do
+      values = [1, 2, 33, 44, 555, 665]
+      printer = Printer.new(values)
+      expected = "   1   2  33  44 555\n 665"
+
+      result = printer.fancy_output
 
       expect(result).to eq(expected)
     end

@@ -40,4 +40,16 @@ class Printer
 
     @output
   end
+
+  def fancy_output
+    @output = ''
+    max_character_count_in_value = @values.max_by { |value| value.to_s.length }.to_s.length + 1
+
+    @values.each_with_index do |value, index|
+      @output += value.to_s.rjust(max_character_count_in_value)
+      @output += @new_line if start_a_new_line?(index)
+    end
+
+    @output
+  end
 end
