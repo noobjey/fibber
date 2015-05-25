@@ -1,7 +1,7 @@
 class Printer
   def jagged_output(values)
-    output = 'Nothing to print!'
-    space = ' '
+    output   = 'Nothing to print!'
+    space    = ' '
     new_line = "\n"
 
     return output unless values.is_a? Array
@@ -22,8 +22,12 @@ class Printer
   def better_output(values)
     output = ''
 
-    values.each do |value|
-      output += '% 4s' % value
+    values.each_with_index do |value, index|
+      if (index + 1) % 5 == 0 && index != 0
+        output += '% 4s' % value + "\n"
+      else
+        output += '% 4s' % value
+      end
     end
 
     output

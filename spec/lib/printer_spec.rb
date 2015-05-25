@@ -45,8 +45,8 @@ describe 'Printer' do
 
   describe 'printer.better_output' do
     it 'should output a string' do
-      printer  = Printer.new
-      values   = [1]
+      printer = Printer.new
+      values  = [1]
 
       result = printer.better_output(values)
 
@@ -54,8 +54,8 @@ describe 'Printer' do
     end
 
     it 'should output four characters when 1 character value' do
-      printer = Printer.new
-      values  = [1]
+      printer  = Printer.new
+      values   = [1]
       expected = 4
 
       result = printer.better_output(values)
@@ -64,8 +64,8 @@ describe 'Printer' do
     end
 
     it 'should output four characters when 2 character value' do
-      printer = Printer.new
-      values  = [15]
+      printer  = Printer.new
+      values   = [15]
       expected = 4
 
       result = printer.better_output(values)
@@ -74,13 +74,23 @@ describe 'Printer' do
     end
 
     it 'should output eight characters when 2 values' do
-      printer = Printer.new
-      values  = [1, 665]
+      printer  = Printer.new
+      values   = [1, 665]
       expected = 8
 
       result = printer.better_output(values)
 
       expect(result.length).to eq(expected)
+    end
+
+    it 'should print five values per line' do
+      printer  = Printer.new
+      values   = [1, 2, 33, 44, 555, 665]
+      expected = "   1   2  33  44 555\n 665"
+
+      result = printer.better_output(values)
+
+      expect(result).to eq(expected)
     end
   end
 end
