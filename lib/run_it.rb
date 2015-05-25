@@ -1,7 +1,6 @@
 require_relative 'printer'
 require_relative 'fibber'
 
-printer = Printer.new
 values_to_display = []
 quantity = 15
 
@@ -9,4 +8,9 @@ quantity = 15
   values_to_display << Fibber.generate(value)
 end
 
-puts printer.jagged_output(values_to_display)
+printer = Printer.new(values_to_display)
+puts 'Jagged Ouput'
+puts printer.jagged_output
+puts "\n" * 2
+puts 'Better Ouput'
+puts printer.better_output
