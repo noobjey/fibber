@@ -1,35 +1,46 @@
 class Printer
+  def initialize
+    @new_line        = "\n"
+    @values_per_line = 5
+    @output          = ''
+  end
+
   def jagged_output(values)
-    output   = 'Nothing to print!'
-    space    = ' '
-    new_line = "\n"
+    bad_input = 'Nothing to print!'
 
-    return output unless values.is_a? Array
+    return bad_input unless values.is_a? Array
 
-    output = ''
+    @output = ''
 
     values.each_with_index do |value, index|
-      if (index + 1) % 5 == 0 && index != 0
-        output += "#{value}#{new_line}"
-      else
-        output += "#{value}#{space}"
-      end
+      @output += '%s ' % value
+      @output.rstrip! if start_a_new_line?(index)
+      @output += @new_line if start_a_new_line?(index)
     end
 
-    output.rstrip
+    @output.rstrip!
+  end
+
+  def start_a_new_line?(index)
+    reached_value_per_line?(index) unless first_value?(index)
+  end
+
+  def reached_value_per_line?(index)
+    (index + 1) % @values_per_line == 0
+  end
+
+  def first_value?(index)
+    index == 0
   end
 
   def better_output(values)
-    output = ''
+    @output = ''
 
     values.each_with_index do |value, index|
-      if (index + 1) % 5 == 0 && index != 0
-        output += '% 4s' % value + "\n"
-      else
-        output += '% 4s' % value
-      end
+      @output += '% 4s' % value
+      @output += @new_line if start_a_new_line?(index)
     end
 
-    output
+    @output
   end
 end
