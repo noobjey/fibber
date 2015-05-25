@@ -24,4 +24,20 @@ describe 'printer.jagged_output' do
 
     expect(printer.jagged_output(values)).to eq(output)
   end
+
+  it 'should print five values on one line and one on another when six values' do
+    printer = Printer.new
+    values = [1, 2, 3, 4, 5, 6]
+    output  = "1 2 3 4 5\n6"
+
+    expect(printer.jagged_output(values)).to eq(output)
+  end
+
+  it 'should print 12 values on three lines with five on all but the last' do
+    printer = Printer.new
+    values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    output  = "1 2 3 4 5\n6 7 8 9 10\n11 12"
+
+    expect(printer.jagged_output(values)).to eq(output)
+  end
 end
