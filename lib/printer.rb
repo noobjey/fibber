@@ -1,18 +1,21 @@
 class Printer
-  def initialize
+  def initialize(values)
     @new_line        = "\n"
     @values_per_line = 5
     @output          = ''
+    @values          = values
   end
 
-  def jagged_output(values)
-    bad_input = 'Nothing to print!'
+  def valid_input?
+    @values.is_a? Array
+  end
 
-    return bad_input unless values.is_a? Array
+  def jagged_output
+    return 'Nothing to print here!' unless valid_input?
 
     @output = ''
 
-    values.each_with_index do |value, index|
+    @values.each_with_index do |value, index|
       @output += '%s ' % value
       @output.rstrip! if start_a_new_line?(index)
       @output += @new_line if start_a_new_line?(index)
@@ -33,10 +36,11 @@ class Printer
     index == 0
   end
 
-  def better_output(values)
+  def better_output
+    return 'Nothing to print here!' unless valid_input?
     @output = ''
 
-    values.each_with_index do |value, index|
+    @values.each_with_index do |value, index|
       @output += '% 4s' % value
       @output += @new_line if start_a_new_line?(index)
     end
