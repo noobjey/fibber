@@ -6,13 +6,7 @@ class Printer
     @values          = values
   end
 
-  def valid_input?
-    @values.is_a? Array
-  end
-
   def jagged_output
-    return 'Nothing to print here!' unless valid_input?
-
     @output = ''
 
     @values.each_with_index do |value, index|
@@ -37,7 +31,6 @@ class Printer
   end
 
   def better_output
-    return 'Nothing to print here!' unless valid_input?
     @output = ''
 
     @values.each_with_index do |value, index|

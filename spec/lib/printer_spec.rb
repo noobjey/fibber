@@ -1,15 +1,6 @@
 require './lib/printer'
 
 describe 'Printer' do
-  it 'should print a warning when invalid input' do
-    value    = 'not an array'
-    printer  = Printer.new(value)
-    expected = 'Nothing to print here!'
-
-    expect(printer.jagged_output).to eq(expected)
-    expect(printer.better_output).to eq(expected)
-  end
-
   describe 'printer.jagged_output' do
     it 'should print one value when one value' do
       value    = [0]
