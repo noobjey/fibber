@@ -10,8 +10,7 @@ class Printer
     @output = ''
 
     @values.each_with_index do |value, index|
-      @output += '%s ' % value
-      @output.rstrip! if start_a_new_line?(index)
+      @output += value.to_s.ljust(value.to_s.length + 1)
       @output += @new_line if start_a_new_line?(index)
     end
 
@@ -32,9 +31,10 @@ class Printer
 
   def better_output
     @output = ''
+    character_count = 4
 
     @values.each_with_index do |value, index|
-      @output += '% 4s' % value
+      @output += value.to_s.rjust(character_count)
       @output += @new_line if start_a_new_line?(index)
     end
 

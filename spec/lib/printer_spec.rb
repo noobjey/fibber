@@ -21,7 +21,7 @@ describe 'Printer' do
     it 'should print five values on one line and one on another when six values' do
       values   = [1, 2, 3, 4, 5, 6]
       printer  = Printer.new(values)
-      expected = "1 2 3 4 5\n6"
+      expected = "1 2 3 4 5 \n6"
 
       expect(printer.jagged_output).to eq(expected)
     end
@@ -29,7 +29,7 @@ describe 'Printer' do
     it 'should print 12 values on three lines with five on all but the last' do
       values   = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
       printer  = Printer.new(values)
-      expected = "1 2 3 4 5\n6 7 8 9 10\n11 12"
+      expected = "1 2 3 4 5 \n6 7 8 9 10 \n11 12"
 
       expect(printer.jagged_output).to eq(expected)
     end
