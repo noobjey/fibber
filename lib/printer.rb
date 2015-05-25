@@ -19,7 +19,13 @@ class Printer
     output.rstrip
   end
 
-  def better_output(_values)
-    '   1'
+  def better_output(values)
+    output = ''
+
+    values.each do |value|
+      output += '% 4s' % value
+    end
+
+    output
   end
 end
