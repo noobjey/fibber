@@ -14,3 +14,6 @@ puts printer.jagged_output
 puts "\n" * 2
 puts 'Better Ouput'
 puts printer.better_output
+puts "\n" * 2
+puts 'Fancy Ouput'
+puts printer.fancy_output
